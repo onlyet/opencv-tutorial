@@ -1,3 +1,5 @@
+# 编译opencv4.3.0（使用surf算法）
+
 # 为什么要重新编译opencv源码？
 oepncv3之后要使用SURF,需要xfeatures2d模块，xfeatures2d模块被移到opencv_contrib了
 所以要使用SURF，需要编译opencv源码和opencv_contrib源码

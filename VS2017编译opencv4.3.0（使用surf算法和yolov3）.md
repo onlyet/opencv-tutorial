@@ -35,7 +35,7 @@ CMake在配置的时候选择x64平台。
 - WITH_CUDNN （勾选CUDA configure后就会出现改选项）
 - OPENCV_EXTRA_MODULES_PATH输入D:\lib\opencv-build\opencv_contrib-4.3.0\modules
 - CUDA_ARCH_BIN只保留6.1 7.5
-- 
+
 ## 上面选项的作用
 启用BUILD_opencv_world好处是只有一个dll，坏处是默认编译所有opencv模块，dll很大，release版在200M到300M左右。  
 OPENCV_ENABLE_NONFREE是为了使用surf算法（特征匹配）。  
