@@ -1,9 +1,4 @@
 # opencv-tutorial
-opencv
-c++，qt，
-目标检测，yolo3，darknet
-surf
-
 ## 编译
 ### windows
 * [编译opencv4.3.0（使用surf算法） ](编译opencv4.3.0（使用surf算法）.md)
@@ -19,5 +14,4 @@ surf
 ### C++调用opencv实现SURF/ORB算法对图片进行特征点提取/匹配/绘制/连线
 ## 目标检测
 
-### 
-
+darknet

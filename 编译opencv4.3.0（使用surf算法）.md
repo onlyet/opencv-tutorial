@@ -2,7 +2,7 @@
 oepncv3之后要使用SURF,需要xfeatures2d模块，xfeatures2d模块被移到opencv_contrib了
 所以要使用SURF，需要编译opencv源码和opencv_contrib源码
 # 编译参考博客
-[https://z90810839huanlan.zhihu.com/p/](https://zhuanlan.zhihu.com/p/90810839)
+[https://z90810839huanlan.zhihu.com/p/](https://zhuanlan.zhihu.com/p/90810839)  
 [https://zhuanlan.zhihu.com/p/114526376](https://zhuanlan.zhihu.com/p/114526376)
 # 可能出现问题
 > 1>D:\Downloads\opencv-build\opencv_contrib-4.3.0\modules\xfeatures2d\test\test_features2d.cpp(51): fatal error C1083: 无法打开包括文件: “features2d/test/test_detectors_regression.impl.hpp”: No such file or directory

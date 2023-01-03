@@ -58,6 +58,6 @@ cmake \
 - OPENCV_EXTRA_MODULES_PATH contrib的module模块所在路径
 - CUDA_ARCH_BIN 显卡对应的算力，具体可看CUDA维基百科
 - OPENCV_ENABLE_NONFREE 为了使用surf等算法
-- BUILD_opencv_world 只生成一个opencv_world .so/.a，否则每个模块生成一个.so/.a
-- . ./[opencv](https://so.csdn.net/so/search?q=opencv&spm=1001.2101.3001.7020)-4.3.0表示opencv源码cmakelist所再路径
-- BUILD_开头的选项表示使用opencv源码中的第三方库构建
+- BUILD_opencv_world 只生成一个opencv_world.so/.a，否则每个模块生成一个.so/.a
+- ../opencv-4.3.0 表示opencv源码cmakelist所再路径
+- BUILD_开头的选项 表示使用opencv源码中的第三方库构建
