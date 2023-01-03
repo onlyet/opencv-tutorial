@@ -24,7 +24,10 @@
 - 将cuDNN解压包内的include，bin，lib里的文件拷贝到CUDA对应的include，bin，lib内
 
 CMake在配置的时候选择x64平台。
-我的构建目录如下，CMake源目录是D:/lib/opencv-build/opencv-4.3.0，输出目录是gD:/lib/opencv-build/generate，最后生成的dll等文件所在目录：D:\lib\opencv-build\generate\install
+我的构建目录如下:
+* CMake源目录是：`D:/lib/opencv-build/opencv-4.3.0`
+* 输出目录是：`D:/lib/opencv-build/generate`
+* 最后生成的dll等文件所在目录：`D:/lib/opencv-build/generate/install`
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/26336920/1672728234011-6a28c554-652c-4dd8-baf1-9c5d9cbb0f23.png#averageHue=%23fbfaf9&clientId=u907332dd-d8d9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u6faf9880&margin=%5Bobject%20Object%5D&name=image.png&originHeight=190&originWidth=713&originalType=url&ratio=1&rotation=0&showTitle=false&size=20244&status=done&style=none&taskId=ua1b91423-23f4-4dab-b8be-ab48186b736&title=)
 
 # CMake工具勾选
@@ -44,13 +47,13 @@ OPENCV_EXTRA_MODULES_PATH指定额外模块的位置，该模块包含xfeature�
 CUDA_ARCH_BIN指定了CUDA计算能力，6.1，7.5分别对应1050显卡和1660s显卡。注意这里网上说能力越多生成的dll越大，所以如果你只使用一张显卡，那就勾选那张显卡对应的能力就行了。
 
 # 编译流程
-configure后generate,然后打开OpenCV.sln
-选择Debug和x64
-先生成opencv_world模块，大概用了30分钟，编译完会生成opencv_world430d.lib和opencv_world430d.dll
-然后生成ALL_BUILD，项目opencv_test_xfeatures2d会生成失败，这个项目我以为取消勾选BUILD_JAVA就不会有了，结果还是有问题，先不管了。
-最后生成INSTALL项目
-删除install目录里无用的文件，然后拷贝保存
-切换Release和x64再编译一遍
+configure后generate,然后打开OpenCV.sln  
+选择Debug和x64  
+先生成opencv_world模块，大概用了30分钟，编译完会生成opencv_world430d.lib和opencv_world430d.dll  
+然后生成ALL_BUILD，项目opencv_test_xfeatures2d会生成失败，这个项目我以为取消勾选BUILD_JAVA就不会有了，结果还是有问题，先不管了。  
+最后生成INSTALL项目  
+删除install目录里无用的文件，然后拷贝保存  
+切换Release和x64再编译一遍  
 
 # 编译时遇到的错误
 ## 错误1

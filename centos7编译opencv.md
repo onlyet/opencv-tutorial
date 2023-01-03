@@ -61,3 +61,8 @@ cmake \
 - BUILD_opencv_world 只生成一个opencv_world.so/.a，否则每个模块生成一个.so/.a
 - ../opencv-4.3.0 表示opencv源码cmakelist所再路径
 - BUILD_开头的选项 表示使用opencv源码中的第三方库构建
+
+# 编译
+```shell
+sh build.sh
+```
