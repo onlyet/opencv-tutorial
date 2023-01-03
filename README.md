@@ -11,7 +11,7 @@ surf
 * [VS2017编译opencv4.3.0（使用surf算法和yolov3）](使用surf算法和yolov3.md)
 
 ### linux平台
-#### centos7编译opencv
+#### [centos7编译opencv](centos7编译opencv.md)
 
 ## 提取关键帧
 ### C++调用opencv提取视频关键帧
