@@ -9,7 +9,7 @@
 * [centos7编译opencv](centos7编译opencv.md)
 
 ## 提取关键帧
-* [C++调用opencv提取视频关键帧](opencv-tutorial-cpp/ExtractKeyFrame/C++调用opencv提取视频关键帧.md)
+* [C++调用opencv提取视频关键帧](./opencv-tutorial-cpp/ExtractKeyFrame/C++调用opencv提取视频关键帧.md)
 
 
 ## 特征点
