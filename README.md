@@ -28,10 +28,9 @@
 ## 目标检测
 - [ ] darknet编译
 
-* [使用darknet yolov3训练自己的数据集](./使用darknet yolov3训练自己的数据集.md)
+* [使用darknet yolov3训练自己的数据集](./使用darknet-yolov3训练自己的数据集.md)
   
-如何用darknet训练
-yolo3
+
 
 ## TODO
 - [ ] 补充相关文档
