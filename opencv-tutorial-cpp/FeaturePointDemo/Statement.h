@@ -1,11 +1,11 @@
 #pragma once
 
-int extractFeatureDemo1();
+int extractFeatureDemo();
 
 //绘制特征图和关键帧图的特征点，并拼接两张图（物理）
-int extractFeatureDemo2();
+//int extractFeatureDemo2();
 //绘制特征图和关键帧图的特征点，并拼接两张图（化学）
-int extractFeatureDemo3();
+//int extractFeatureDemo3();
 
 
 int bfMatch();

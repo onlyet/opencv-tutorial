@@ -3,20 +3,13 @@
 
 int main()
 {
-	extractFeatureDemo1();
-	//extractFeatureDemo2();
-	//extractFeatureDemo3();
+	//extractFeatureDemo();
+
 	//bfMatch();
+
 	//flannMatch();
-	//flannMatch_p();
-	//flannMatch_c();
-	//objectSearch();
-	//orb();
-	//matchDemo();
-	//mergeImage_c();
-	//compressFile();
-	//compressFile2();
-	//IpcPreview();
+
+	orb();
 
 	return 0;
 }

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
+#include <io.h>
+#include <direct.h>
 
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -15,10 +17,28 @@ using namespace std;
 using namespace cv;
 
 // 根据情况调节阈值
-#define Threshold_Value 0.4
+#define Threshold_Value 0.25
 
 #define VideoPath "../Resource/xgplayer-demo-720p.mp4"
 #define OutputImgPath "../x64/Debug/keyframes/"
+
+
+int mkdir_(const string& dirpath)
+{
+	//string folderPath = "E:\\database\\testFolder";
+
+	if (0 != _access(dirpath.c_str(), 0))
+	{
+		// if this folder not exist, create a new one.
+		if (_mkdir(dirpath.c_str()) != 0)   // 返回 0 表示创建成功，-1 表示失败
+		{
+			cout << "create dir failed" << endl;
+			return -1;
+		}
+	}
+
+	return 0;
+}
 
 int extractKeyFrame()
 {
@@ -42,6 +62,8 @@ int extractKeyFrame()
 
 	Mat grayKeyFrame;
 	cvtColor(frame_key, grayKeyFrame, CV_BGR2GRAY);	// 19ms
+
+	if (mkdir_(OutputImgPath)) return -1;
 
 	stringstream str;
 	str << OutputImgPath << currentFrame << ".jpg";
