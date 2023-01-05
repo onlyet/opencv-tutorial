@@ -63,5 +63,5 @@
     `darknet.exe detector demo data/human.data cfg/human.cfg backup/human_final.weights test.mp4`
 
 ## 参考
-https://github.com/AlexeyAB/darknet
+https://github.com/AlexeyAB/darknet  
 [YOLO3 darknet训练自己的数据](https://zhuanlan.zhihu.com/p/45852709)
