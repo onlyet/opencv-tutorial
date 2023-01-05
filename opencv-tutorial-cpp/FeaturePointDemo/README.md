@@ -48,9 +48,12 @@ VS将FeaturePointDemo设为启动项目，f5调试
 ### orb匹配
 代码实现：orb函数  
 匹配后图片宽度会超过屏幕显示宽度，而缩放图片会变形，所以不缩放  
-ORB特征点并绘制
-<img decoding="async" src="./ORB特征点.png" width="70%">
+  
+ORB特征点提取并绘制  
+<img decoding="async" src="./ORB特征点.png" width="70%">  
+  
 ORB所有匹配点对
-<img decoding="async" src="./ORB所有匹配点对.png" width="100%">
+<img decoding="async" src="./ORB所有匹配点对.png" width="100%">  
+  
 ORB优化后匹配点对
 <img decoding="async" src="./ORB优化后匹配点对.png" width="100%">
