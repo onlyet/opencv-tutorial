@@ -30,7 +30,7 @@
 
 * [使用darknet yolov3训练自己的数据集](./使用darknet-yolov3训练自己的数据集.md)
   
-
+* [Qt调用opencv实现yolov3对视频进行目标检测](./opencv-tutorial-cpp/ObjectDetect/Qt调用opencv实现yolov3对视频进行目标检测.md)
 
 ## TODO
 - [ ] 补充相关文档

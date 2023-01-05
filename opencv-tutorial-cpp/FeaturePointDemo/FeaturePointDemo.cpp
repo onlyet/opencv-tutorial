@@ -15,14 +15,6 @@ using namespace cv;
 using namespace cv::xfeatures2d;
 using namespace std;
 
-
-#define PhysicsStepNum			14
-#define PhysicsKeyFrameNum		31
-//#define Physics_Key_Frame_
-
-#define ChemistryStepNum		17
-#define ChemistryKeyFrameNum	38
-
 //	Threshold for the keypoint detector.Only features, whose hessian is larger than hessianThreshold are retained by the detector.
 //	Therefore, the larger the value, the less keypoints you will get.A good default value could be from 300 to 500, depending from the image contrast.
 #define SurfMinHessian	400
