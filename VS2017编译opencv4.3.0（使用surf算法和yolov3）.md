@@ -5,28 +5,20 @@
 ## 编译平台/依赖
 
 - win10 
-- VS2017
+- VS2019
 - python3.7.5 
 - Cmake-gui（3.15.1）
 - opencv4.7.0 
 - opencv_contrib-4.7.0（版本要和opencv一样）
 - 一张显卡
 - CUDA11.7（CUDA的版本计算能力要包含显卡的计算能力）
-- CUDNN（版本要和CUDA10.2一样）
+- CUDNN（版本要和CUDA一样）
 
-
-### 下载CUDA
-为了让opencv yolov3使用GPU跑，要启用CUDA。  
-我的显卡是1650s，根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力，这里我选用CUDA10.2版本。
-<img decoding="async" src="./计算能力.png" width="100%">
-<img decoding="async" src="./计算能力对应CUDA版本.png" width="100%">
-
-
-## 编译前准备
+### 编译前准备
 
 - [opencv4.7.0下载](https://opencv.org/releases/)
 - [opencv_contrib-4.7.0到github下载](https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.zip)
-- 下载安装CUDA
+- CUDA下载安装
 
     >为了让opencv yolov3使用GPU跑，要启用CUDA。  
     我的显卡是1650s，根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力，这里我选用CUDA12.0版本。
@@ -36,9 +28,11 @@
     然后在命令行用nvidia-smi查看显卡驱动适配的最高CUDA版本
     <img decoding="async" src="./nvidia-smi.png" width="100%">
     可以看到显卡支持最高CUDA版本是11.7，你下载的CUDA版本必须低于该版本，这里我直接使用11.7
-    [CUDA12.0下载](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
+    [CUDA11.7下载](https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_516.01_windows.exe)
 
-- 将cuDNN解压包内的include，bin，lib里的文件拷贝到CUDA对应的include，bin，lib内
+- cuDNN下载安装
+  >[cuDNN8.7.0下载](https://developer.nvidia.com/downloads/c118-cudnn-windows-8664-87084cuda11-archivezip)
+  下载完将cuDNN解压包内的include，bin，lib里的文件拷贝到CUDA对应的include，bin，lib内
 
 CMake在配置的时候选择x64平台。
 我的构建目录如下:
@@ -48,20 +42,21 @@ CMake在配置的时候选择x64平台。
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/26336920/1672728234011-6a28c554-652c-4dd8-baf1-9c5d9cbb0f23.png#averageHue=%23fbfaf9&clientId=u907332dd-d8d9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u6faf9880&margin=%5Bobject%20Object%5D&name=image.png&originHeight=190&originWidth=713&originalType=url&ratio=1&rotation=0&showTitle=false&size=20244&status=done&style=none&taskId=ua1b91423-23f4-4dab-b8be-ab48186b736&title=)
 
 ## CMake工具勾选
-- BUILD_opencv_world
-- OPENCV_ENABLE_NONFREE
-- WITH_CUDA
-- OPENCV_DNN_CUDA
-- WITH_CUDNN （勾选CUDA configure后就会出现改选项）
-- OPENCV_EXTRA_MODULES_PATH输入D:\lib\opencv-build\opencv_contrib-4.3.0\modules
-- CUDA_ARCH_BIN只保留6.1 7.5
+- [x] BUILD_opencv_world
+                  - [ ] 
+- [x] OPENCV_ENABLE_NONFREE
+- [x] WITH_CUDA
+- [x] OPENCV_DNN_CUDA
+- [x] WITH_CUDNN （勾选CUDA configure后就会出现改选项）
+- [x] OPENCV_EXTRA_MODULES_PATH输入D:\lib\opencv-build\opencv_contrib-4.3.0\modules
+- [x] CUDA_ARCH_BIN输入7.5
 
 ### 上面选项的作用
 启用BUILD_opencv_world好处是只有一个dll，坏处是默认编译所有opencv模块，dll很大，release版在200M到300M左右。  
 OPENCV_ENABLE_NONFREE是为了使用surf算法（特征匹配）。  
 WITH_CUDA，OPENCV_DNN_CUDA，WITH_CUDNN是为了使用GPU版darknet或者GPU版opencv yolov3。  
 OPENCV_EXTRA_MODULES_PATH指定额外模块的位置，该模块包含xfeature（使用surf算法）。  
-CUDA_ARCH_BIN指定了CUDA计算能力，6.1，7.5分别对应1050显卡和1660s显卡。注意这里网上说能力越多生成的dll越大，所以如果你只使用一张显卡，那就勾选那张显卡对应的能力就行了。
+CUDA_ARCH_BIN指定了CUDA计算能力，7.5对应1660s显卡。
 
 ## 编译流程
 configure后generate,然后打开OpenCV.sln  
