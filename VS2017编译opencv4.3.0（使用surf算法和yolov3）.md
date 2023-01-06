@@ -1,12 +1,12 @@
 # VS2017编译opencv4.3.0（使用surf算法和yolov3）
 
-之前写过一篇博客编译opencv4.3.0，目的是使用surf算法。而这一次不仅要使用surf算法，还要使用yolov3，所以又重新编译一次opencv4.3.0。
+之前写过一篇博客编译opencv4.3.0，目的是使用surf算法。而这一次不仅要使用surf算法，还要使用yolov3进行目标检测。由于目标检测用CPU跑不仅慢帧率还低，所以我们要用GPU跑。同样的darknet也用GPU版不然训练太慢。所以要重新编译一次opencv4.3.0。
 
 # 编译平台/依赖
 
 - win10 
 - VS2017
-- CMake3.15.1 
+- Cmake-gui（3.15.1）
 - opencv4.3.0 
 - opencv_contrib-4.3.0（版本要和opencv一样）
 - 一张显卡
@@ -14,9 +14,13 @@
 - CUDNN（版本要和CUDA10.2一样）
 - python3.7.5 
 
-https://zh.wikipedia.org/zh-sg/CUDA
-为了让opencv yolov3使用GPU跑，要启用CUDA。首先看自己是什么显卡，我先后用了1050和1650s显卡。如下图，根据CUDA维基百科，1050显卡的计算能力是6.1，1650s的计算能力是7.5，这里要注意CUDA9不支持计算能力7.5，所以直接用CUDA10就行了。![image.png](https://cdn.nlark.com/yuque/0/2023/png/26336920/1672728093443-85ba3d1a-cfa1-484e-ab1b-7818c1d2c9a4.png#averageHue=%23f2f4f6&clientId=u907332dd-d8d9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u36698ae1&margin=%5Bobject%20Object%5D&name=image.png&originHeight=858&originWidth=1678&originalType=url&ratio=1&rotation=0&showTitle=false&size=131233&status=done&style=none&taskId=ube57c2d8-fe51-4699-b51b-ef8f86390c9&title=)
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/26336920/1672728108638-315b8263-3c4c-4526-9b6e-1ae06cc27014.png#averageHue=%23fdfbf9&clientId=u907332dd-d8d9-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ua8b1f731&margin=%5Bobject%20Object%5D&name=image.png&originHeight=444&originWidth=1658&originalType=url&ratio=1&rotation=0&showTitle=false&size=86360&status=done&style=none&taskId=u550f74c5-9ee0-4c81-8fb9-e73f67bfb2c&title=)
+## 下载CUDA
+为了让opencv yolov3使用GPU跑，要启用CUDA。  
+我的显卡是1650s  
+根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力，这里我选用CUDA10.2版本。
+<img decoding="async" src="./计算能力.png" width="100%">
+<img decoding="async" src="./计算能力对应CUDA版本.png" width="100%">
+
 
 # 编译前准备
 
