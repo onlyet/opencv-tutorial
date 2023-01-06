@@ -8,10 +8,10 @@
 - VS2017
 - python3.7.5 
 - Cmake-gui（3.15.1）
-- opencv4.3.0 
-- opencv_contrib-4.3.0（版本要和opencv一样）
+- opencv4.7.0 
+- opencv_contrib-4.7.0（版本要和opencv一样）
 - 一张显卡
-- CUDA10.2（CUDA的版本计算能力要包含显卡的计算能力）
+- CUDA11.7（CUDA的版本计算能力要包含显卡的计算能力）
 - CUDNN（版本要和CUDA10.2一样）
 
 
@@ -35,7 +35,7 @@
     <b>
     然后在命令行用nvidia-smi查看显卡驱动适配的最高CUDA版本
     <img decoding="async" src="./nvidia-smi.png" width="100%">
-    可以看到显卡支持最高CUDA版本是11.7，你下载的CUDA版本必须低于该版本
+    可以看到显卡支持最高CUDA版本是11.7，你下载的CUDA版本必须低于该版本，这里我直接使用11.7
     [CUDA12.0下载](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
 
 - 将cuDNN解压包内的include，bin，lib里的文件拷贝到CUDA对应的include，bin，lib内
