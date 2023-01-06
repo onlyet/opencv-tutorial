@@ -11,23 +11,33 @@
 - opencv4.3.0 
 - opencv_contrib-4.3.0（版本要和opencv一样）
 - 一张显卡
-- CUDA10.2
+- CUDA10.2（CUDA的版本计算能力要包含显卡的计算能力）
 - CUDNN（版本要和CUDA10.2一样）
 
 
 ### 下载CUDA
 为了让opencv yolov3使用GPU跑，要启用CUDA。  
-我的显卡是1650s  
-根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力，这里我选用CUDA10.2版本。
+我的显卡是1650s，根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力，这里我选用CUDA10.2版本。
 <img decoding="async" src="./计算能力.png" width="100%">
 <img decoding="async" src="./计算能力对应CUDA版本.png" width="100%">
 
 
 ## 编译前准备
 
-- opencv4.3.0到官网下载
-- opencv_contrib-4.3.0到github下载
-- 安装CUDA10.2
+- [opencv4.7.0下载](https://opencv.org/releases/)
+- [opencv_contrib-4.7.0到github下载](https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.zip)
+- 下载安装CUDA
+
+    >为了让opencv yolov3使用GPU跑，要启用CUDA。  
+    我的显卡是1650s，根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力，这里我选用CUDA12.0版本。
+    <img decoding="async" src="./计算能力.png" width="100%">  
+    <img decoding="async" src="./计算能力对应CUDA版本.png" width="100%">
+    <b>
+    然后在命令行用nvidia-smi查看显卡驱动适配的最高CUDA版本
+    <img decoding="async" src="./nvidia-smi.png" width="100%">
+    可以看到显卡支持最高CUDA版本是11.7，你下载的CUDA版本必须低于该版本
+    [CUDA12.0下载](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
+
 - 将cuDNN解压包内的include，bin，lib里的文件拷贝到CUDA对应的include，bin，lib内
 
 CMake在配置的时候选择x64平台。
