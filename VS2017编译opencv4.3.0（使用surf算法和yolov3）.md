@@ -29,6 +29,8 @@
     <img decoding="async" src="./nvidia-smi.png" width="100%">
     可以看到显卡支持最高CUDA版本是11.7，你下载的CUDA版本必须低于该版本，这里我直接使用11.7
     [CUDA11.7下载](https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_516.01_windows.exe)
+    >#### 安装
+    > 
 
 - cuDNN下载安装
   >[cuDNN8.7.0下载](https://developer.nvidia.com/downloads/c118-cudnn-windows-8664-87084cuda11-archivezip)
@@ -43,7 +45,6 @@ CMake在配置的时候选择x64平台。
 
 ## CMake工具勾选
 - [x] BUILD_opencv_world
-                  - [ ] 
 - [x] OPENCV_ENABLE_NONFREE
 - [x] WITH_CUDA
 - [x] OPENCV_DNN_CUDA
@@ -52,20 +53,20 @@ CMake在配置的时候选择x64平台。
 - [x] CUDA_ARCH_BIN输入7.5
 
 ### 上面选项的作用
-启用BUILD_opencv_world好处是只有一个dll，坏处是默认编译所有opencv模块，dll很大，release版在200M到300M左右。  
+>启用BUILD_opencv_world好处是只有一个dll，坏处是默认编译所有opencv模块，dll很大，release版在200M到300M左右。  
 OPENCV_ENABLE_NONFREE是为了使用surf算法（特征匹配）。  
 WITH_CUDA，OPENCV_DNN_CUDA，WITH_CUDNN是为了使用GPU版darknet或者GPU版opencv yolov3。  
 OPENCV_EXTRA_MODULES_PATH指定额外模块的位置，该模块包含xfeature（使用surf算法）。  
 CUDA_ARCH_BIN指定了CUDA计算能力，7.5对应1660s显卡。
 
 ## 编译流程
-configure后generate,然后打开OpenCV.sln  
-选择Debug和x64  
-先生成opencv_world模块，大概用了30分钟，编译完会生成opencv_world430d.lib和opencv_world430d.dll  
-然后生成ALL_BUILD，项目opencv_test_xfeatures2d会生成失败，这个项目我以为取消勾选BUILD_JAVA就不会有了，结果还是有问题，先不管了。  
-最后生成INSTALL项目  
-删除install目录里无用的文件，然后拷贝保存  
-切换Release和x64再编译一遍  
+1. configure后generate,然后打开OpenCV.sln  
+2. 选择Debug和x64  
+3. 先生成opencv_world模块，大概用了30分钟，编译完会生成opencv_world430d.lib和opencv_world430d.dll  
+4. 然后生成ALL_BUILD，项目opencv_test_xfeatures2d会生成失败，这个项目我以为取消勾选BUILD_JAVA就不会有了，结果还是有问题，先不管了。  
+5. 最后生成INSTALL项目  
+6. 删除install目录里无用的文件，然后拷贝保存  
+7. 切换Release和x64再编译一遍  
 
 ## 编译时遇到的错误
 ### 错误1
