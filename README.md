@@ -41,3 +41,4 @@
 如果觉得本项目对你有帮助，点个**star**吧！  
 https://github.com/onlyet/opencv-tutorial  
 B站的小伙伴给个**三连和关注**吧，你的四连是我更新的动力！
+![Q群](QQ.png)
