@@ -115,9 +115,9 @@ vgg_generated_48.i
 解决方法：将opencv-build\opencv-4.3.0\modules\features2d目录拷贝到opencv-build\generate（CMake生成目录）
 
 ## 最后
-[github搜索onlyet](https://github.com/onlyet)
-[CSDN搜索他过江](https://blog.csdn.net/et_endeavoring)
-[B站ID:他过江](https://space.bilibili.com/16030836)
+* [github搜索onlyet](https://github.com/onlyet)  
+* [CSDN搜索他过江](https://blog.csdn.net/et_endeavoring)  
+* [B站ID:他过江](https://space.bilibili.com/16030836)  
 B站的小伙伴点个**三连和关注**吧。  
-你指尖跃动的四连是我此生不灭的更新的动力！
+你指尖跃动的四连是我此生不灭的更新的动力！  
 ![Q群](QQ.png)
