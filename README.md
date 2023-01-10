@@ -10,7 +10,7 @@
 
 ## 一 编译
 ### windows
-* [编译opencv4.3.0（启用surf算法） ](编译opencv4.3.0（使用surf算法）.md)
+* ~~[编译opencv4.3.0（启用surf算法） ](编译opencv4.3.0（使用surf算法）.md)~~
 
 * [VS2017编译opencv4.3.0（启用surf算法和yolov3）](VS2017编译opencv4.7.0（使用surf算法和yolov3）.md)
 

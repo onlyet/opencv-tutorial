@@ -1,6 +1,8 @@
 # VS2019编译opencv4.7.0（使用surf算法和yolov3）
 
-之前写过一篇博客编译opencv4.3.0，目的是使用surf算法。而这一次不仅要使用surf算法，还要使用yolov3进行目标检测。由于目标检测用CPU跑不仅慢帧率还低，所以我们要用GPU跑。同样的darknet也用GPU版不然训练太慢。所以要重新编译一次opencv4.7.0。
+## 为什么要重新编译opencv源码？
+opencv3之后要使用SURF,需要xfeatures2d模块，xfeatures2d模块被移到opencv_contrib了，所以要使用SURF，需要重新编译opencv源码和opencv_contrib源码。  
+本项目不仅要使用SURF算法，还要使用yolov3进行目标检测。由于目标检测用CPU跑不仅慢帧率还低，所以我们要用GPU跑。同样的darknet也要用GPU跑不然训练太慢。接下来将演示如何编译opencv4.7.0。
 
 ## 编译平台/依赖
 
