@@ -16,29 +16,27 @@
 - 科学上网
 
 ### 编译前准备
-
 - [opencv4.7.0下载](https://opencv.org/releases/)
 - [opencv_contrib-4.7.0到github下载](https://github.com/opencv/opencv_contrib/archive/refs/tags/4.7.0.zip)
 - CUDA下载安装
-
-    >为了让opencv yolov3使用GPU跑，要启用CUDA。  
-    我的显卡是1650s，根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，**1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力**。
-    <img decoding="async" src="./计算能力.png" width="100%">  
-    <img decoding="async" src="./计算能力对应CUDA版本.png" width="100%">
-    <b>
-    然后在命令行用nvidia-smi查看显卡驱动适配的最高CUDA版本
-    <img decoding="async" src="./nvidia-smi.png" width="100%">
-    可以看到1650s显卡支持最高CUDA版本是11.7，你下载的CUDA版本必须低于该版本，这里我选用CUDA11.6.2版本。
-    [CUDA官网（可能需要登录英伟达账号）](https://developer.nvidia.com/cuda-zone)
-    [CUDA11.6.2下载](https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_516.01_windows.exe)
-    >#### 安装
-    > 安装比较简单，如果不想更新显卡驱动建议选择自定义安装，取消勾选显卡驱动。
+    > 为了让opencv yolov3使用GPU跑，要启用CUDA。  
+    > 我的显卡是1650s，根据[CUDA百科](https://zh.wikipedia.org/zh-sg/CUDA)，**1650s的计算能力是7.5，而CUDA10.0以上的版本才支持7.5的计算能力**。  
+    > <img decoding="async" src="./计算能力.png" width="100%">  
+    > <img decoding="async" src="./计算能力对应CUDA版本.png" width="100%">
+    > <b>
+    > 然后在命令行用nvidia-smi查看显卡驱动适配的最高CUDA版本  
+    > <img decoding="async" src="./nvidia-smi.png" width="100%">
+    > 可以看到1650s显卡支持最高CUDA版本是11.7，你下载的CUDA版本必须低于该版本，这里我选用CUDA11.6.2版本。  
+    > [CUDA官网（可能需要登录英伟达账号）](https://developer.nvidia.com/cuda-zone)  
+    > [CUDA11.6.2下载](https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_516.01_windows.exe)  
+    > 安装 
+    >> 安装比较简单，如果不想更新显卡驱动建议选择自定义安装，取消勾选显卡驱动。
 
 - cuDNN下载解压并拷贝文件到CUDA目录
-  >[cnDNN官网（可能需要登录英伟达账号）](https://developer.nvidia.com/cudnn)
-  [cuDNN8.7.0下载](https://developer.nvidia.com/downloads/c118-cudnn-windows-8664-87084cuda11-archivezip)
-  这里我直接下载兼容CUDA11.x的最新版本cuDNN8.7
-  **下载完将cuDNN解压包内的include，bin，lib里的文件拷贝到CUDA对应的include，bin，lib内**
+  > [cnDNN官网（可能需要登录英伟达账号）](https://developer.nvidia.com/cudnn)  
+  > [cuDNN8.7.0下载](https://developer.nvidia.com/downloads/c118-cudnn-windows-8664-87084cuda11-archivezip)  
+  > 这里我直接下载兼容CUDA11.x的最新版本cuDNN8.7  
+  > **下载完将cuDNN解压包内的include，bin，lib里的文件拷贝到CUDA对应的include，bin，lib内**
 
 - 使用opencv-4.7.0的下载缓存文件（可选）
   > opencv配置的时候要下载很多文件（大概160MB），如果你网络不好就可能下载失败，导致配置报错或者编译VS项目的时候报错，即使科学上网也可能下载失败。所以我这里将opencv-4.7.0版本的下载缓存文件备份到QQ群，有需要加群获取。直接用我的缓存文件配置过程会非常快。当然你必须用4.7版本，其它版本我不保证不会出问题。
