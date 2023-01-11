@@ -12,7 +12,7 @@
 ### windows
 * ~~[编译opencv4.3.0（启用surf算法） ](编译opencv4.3.0（使用surf算法）.md)~~
 
-* [VS2017编译opencv4.7.0（启用surf算法和yolov3）](VS2017编译opencv4.7.0（使用surf算法和yolov3）.md)
+* [VS2019编译opencv4.7.0（启用surf算法和yolov3）](VS2019编译opencv4.7.0（使用surf算法和yolov3）.md)
 
 ### linux
 * [centos7编译opencv](centos7编译opencv.md)
