@@ -7,7 +7,7 @@
 *以训练人手和人脸这两个类为例子*
 
 
-1. 将包含人手和人脸的图片放到build\darknet\x64\data\train_iamges和build\darknet\x64\data\val_images,train_iamges里是训练的图片，val_images里是用来验证的图片。
+1. 将包含人手和人脸的图片放到data\train_iamges和data\val_images,train_iamges里是训练的图片，val_images里是用来验证的图片。
 
 2. 新建 human.names文件，输入所有类名如下：（注意不要有制表符）
     ```
@@ -54,13 +54,13 @@
 7. darknet训练命令和检测命令
 
     训练：
-    `darknet.exe detector train data/human.data cfg/human.cfg darknet53.conv.74`
+    `darknet detector train data/human.data cfg/human.cfg darknet53.conv.74`
     darknet53.conv.74是下载好的预训练文件。
 
     检测图片：
-    `darknet.exe detector test data/human.data cfg/human.cfg backup/human_final.weights data/test.jpg`
+    `darknet detector test data/human.data cfg/human.cfg backup/human_final.weights data/test.jpg`
     检测视频：
-    `darknet.exe detector demo data/human.data cfg/human.cfg backup/human_final.weights test.mp4`
+    `darknet detector demo data/human.data cfg/human.cfg backup/human_final.weights test.mp4`
 
 ## 参考
 https://github.com/AlexeyAB/darknet  
