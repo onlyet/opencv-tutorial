@@ -125,7 +125,7 @@ int extractKeyFrame()
 
 		// counter  num  p 分别为  有变化的像素点数  总像素点数目  比例
 		p = counter / num;
-		//printf(">>>>>>counter>>>>num>>>>p: %f  %f  %f  \n", counter, num, p);
+		printf(">>>>>>counter>>>>num>>>>p: %f  %f  %f  \n", counter, num, p);
 		if (p > Threshold_Value) //达到阈值的像素数达到一定的数量则保存该图像
 		{
 			frame_key = frame;

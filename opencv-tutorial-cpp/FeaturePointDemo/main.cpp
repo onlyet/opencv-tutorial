@@ -3,13 +3,13 @@
 
 int main()
 {
-	//extractFeatureDemo();
+	extractFeatureDemo();
 
 	//bfMatch();
 
 	//flannMatch();
 
-	orb();
+	//orb();
 
 	return 0;
 }

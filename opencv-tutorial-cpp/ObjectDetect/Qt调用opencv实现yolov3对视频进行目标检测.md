@@ -1,5 +1,4 @@
 # Qt调用opencv实现yolov3对视频进行目标检测
 
-## TODO
-- [ ] 对视频文件进行目标检测
-- [ ] 对网络摄像头进行目标检测
+参考：
+https://blog.csdn.net/ET_Endeavoring/article/details/106794677
